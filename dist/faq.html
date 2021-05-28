@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>FAQ</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="./img/favicons/favicon.png" type="image/png">
+    <link rel="stylesheet" href="./styles/main.css">
+    <script>
+      var ua = window.navigator.userAgent.toLowerCase(), is_ie = (/trident/gi).test(ua) || (/msie/gi).test(ua);
+      if (is_ie) {
+      		document.documentElement.className += 'ie';
+      }
+      console.log(!is_ie);
+    </script>
+  </head>
+  <body>
+    <header class="header">
+      <div class="header-top">
+        <div class="container">
+          <div class="row-sb">
+            <button class="header-top__district" data-modal="district" title="Нажмите для выбора района"> <img src="img/icons/marker.svg" alt=""><small>Ваш район обслуживания <span>Москва</span></small></button><small class="header-top__time">Вывоз отходов осуществляется круглосуточно. Прием заказов с 8.00 до 22.00.</small>
+            <div class="header-top__search">
+              <form class="header-top__search-wrapper">
+                <input type="text" title="Поле ввода для поиска" required>
+                <button title="Искать"><img src="img/icons/search.svg" alt=""></button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="header-mid">
+        <div class="container">
+          <div class="row-sb"><a class="logo" href="index.html">
+              <div class="logo__img"> <img src="img/logo/logo.svg" alt="Логотип сайта"/></div></a>
+            <div class="header-mid__menu">
+              <nav class="header-mid__nav"> 
+                <ul> 
+                  <li class="header-mid__nav-item" id="navItemServices"><a href="uslugi.html">Услуги <img src="img/icons/angle-down.svg" alt=""></a>
+                    <div class="header-mid__hidden-block">
+                      <ul> 
+                        <li><a class="title-h4" href="link1" data-image="img/cars/common.png">Вывоз мусора контейнером</a></li>
+                        <li><a class="title-h4" href="link1" data-image="img/bodies/trash.png">Погрузочные работы</a></li>
+                        <li><a class="title-h4" href="link1" data-image="img/cars/red.png">Вывоз грунта</a></li>
+                        <li><a class="title-h4" href="vyvoz-stroitelnogo-musora.html" data-image="img/cars/small.png">Вывоз строительного мусора</a></li>
+                        <li><a class="title-h4" href="link1" data-image="img/cars/frost.png">Вывоз снега</a></li>
+                        <li><a class="title-h4" href="link1" data-image="img/cars/red.png">Транспортные услуги по перевозке металла</a></li>
+                        <li><a class="title-h4" href="link1" data-image="img/cars/common.png">Вывоз отходов производства</a></li>
+                        <li><a class="title-h4" href="link1" data-image="img/bodies/red.png">Вывоз отходов древесины</a></li>
+                      </ul>
+                      <div class="header-mid__hidden-img"><img src="img/cars/common.png" alt=""></div>
+                    </div>
+                  </li>
+                  <li class="header-mid__nav-item"><a href="#">Цены</a></li>
+                  <li class="header-mid__nav-item"><a href="kontakty.html">Контакты</a></li>
+                  <li class="header-mid__nav-item" id="navItemAdd"> <span>Еще <img src="img/icons/angle-down.svg" alt=""></span>
+                    <div class="header-mid__hidden-block"><a href="faq.html">FAQ</a><a href="zakluchenie-dogovora.html">Заключение договора</a><a href="vakansii.html">Вакансии</a><a href="media.html">Фото и видео техники</a></div>
+                  </li>
+                </ul>
+              </nav>
+              <div class="header-mid__infoblock infoblock"><a class="infoblock__email" href="mailto:stroi-musor@yandex.ru" title="Написать на почту stroi-musor@yandex.ru">
+                  <svg>
+                    <use href="img/sprites/sprite.svg#envelope"></use>
+                  </svg><span>stroi-musor@yandex.ru</span></a>
+                <div class="infoblock__phones"> <a href="tel:+74957748350" title="Позвонить на номер: +7 495 774 83 50">+7 495 774 83 50</a><a href="tel:+79857748350" title="Позвонить на номер: +7 985 774 83 50">+7 985 774 83 50</a></div>
+                <div class="infoblock__call"> 
+                  <button class="button white">Написать нам<img src="img/icons/call.svg" alt="">
+                  </button>
+                </div>
+              </div>
+            </div>
+            <button class="button-burger"><span class="top"></span><span class="mid"></span><span class="bot"></span></button>
+          </div>
+        </div>
+      </div>
+    </header>
+    <div class="modal-overlay"></div>
+    <div class="modal modal-district" data-modal="district" role="dialog" data-no-focus-lock>
+      <div class="modal__content container">
+        <div class="modal__container">
+          <div class="container">
+            <div class="modal-district__textblock"> 
+              <div class="modal-district__textblock-img"><img src="img/icons/marker.svg" alt=""></div><b class="title-h3">Для корретного отображения цен, выберите ваш район обслуживания</b>
+            </div>
+            <ul class="modal-district__list">
+              <li>
+                <button class="title-h4" data-district="ЦАО">Центральный административный округ (ЦАО)</button>
+              </li>
+              <li>
+                <button class="title-h4" data-district="ЮВАО">Юго-Восточный административный округ (ЮВАО)</button>
+              </li>
+              <li>
+                <button class="title-h4" data-district="СЗАО">Северо-Западный административный округ (СЗАО)</button>
+              </li>
+              <li>
+                <button class="title-h4" data-district="САО">Северный административный округ (САО)</button>
+              </li>
+              <li>
+                <button class="title-h4" data-district="ВАО">Восточный административный округ (ВАО)</button>
+              </li>
+              <li>
+                <button class="title-h4" data-district="Новомосковский">Новомосковский</button>
+              </li>
+              <li>
+                <button class="title-h4" data-district="Троицкий">Троицкий</button>
+              </li>
+              <li>
+                <button class="title-h4" data-district="ЮАО">Южный административный округ (ЮАО)</button>
+              </li>
+              <li>
+                <button class="title-h4" data-district="ЮЗАО">Юго-Западный административный округ (ЮЗАО)</button>
+              </li>
+              <li>
+                <button class="title-h4" data-district="СВАО">Северо-Восточный административный округ (СВАО)</button>
+              </li>
+              <li>
+                <button class="title-h4" data-district="ЗАО">Западный административный округ (ЗАО)</button>
+              </li>
+            </ul>
+          </div>
+          <button class="modal__button" title="Закрыть (Esc)" aria-label="Закрыть"></button>
+        </div>
+      </div>
+    </div>
+    <div class="content">
+      <main>
+        <section class="faq">
+          <div class="container">
+                <nav class="broads">
+                  <ul>
+                    <li><a href="index.html">Главная</a></li>
+                    <li><a href="o-kompanii.html">О компании</a></li>
+                    <li>FAQ</li>
+                  </ul>
+                </nav>
+            <h1 class="title-h2 mb52">FAQ</h1>
+            <ul class="slide-list">
+                  <li class="slide-item"> 
+                    <button class="slide-item__button"><span class="title-h3">Сколько стоит вывоз 8 м<sup>3</sup> мусора? Выше ли цена, если объект расположен в центре города?</span>
+                      <svg> 
+                        <use href="img/sprites/sprite.svg#arrow-down"></use>
+                      </svg>
+                    </button>
+                    <div class="slide-item__hidden">
+                      <p>Стоимость вывоза отходов объемом 8 м<sup>3</sup> рассчитывается для каждого заказа индивидуально. Это связано с тем, что затраты на перевозку зависят от расстояния, которое необходимо преодолеть машине. Как правило, стоимость услуги составляет от 6.000 рублей. Вывоз мусора может осуществляться сразу же или через сутки. Если у вас остались вопросы, звоните. Будем рады помочь.</p>
+                    </div>
+                  </li>
+                  <li class="slide-item"> 
+                    <button class="slide-item__button"><span class="title-h3">Сколько стоит вывоз 8 м<sup>3</sup> мусора? Выше ли цена, если объект расположен в центре города?</span>
+                      <svg> 
+                        <use href="img/sprites/sprite.svg#arrow-down"></use>
+                      </svg>
+                    </button>
+                    <div class="slide-item__hidden">
+                      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consequatur fuga magni alias aperiam, molestias mollitia fugiat veniam, optio asperiores rerum doloribus laborum quis reprehenderit iste. Sapiente molestiae unde amet excepturi.</p>
+                    </div>
+                  </li>
+                  <li class="slide-item"> 
+                    <button class="slide-item__button"><span class="title-h3">Предусмотрены ли скидки?</span>
+                      <svg> 
+                        <use href="img/sprites/sprite.svg#arrow-down"></use>
+                      </svg>
+                    </button>
+                    <div class="slide-item__hidden">
+                      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consequatur fuga magni alias aperiam, molestias mollitia fugiat veniam, optio asperiores rerum doloribus laborum quis reprehenderit iste. Sapiente molestiae unde amet excepturi.</p>
+                    </div>
+                  </li>
+                  <li class="slide-item"> 
+                    <button class="slide-item__button"><span class="title-h3">Какова стоимость вывоза снега?</span>
+                      <svg> 
+                        <use href="img/sprites/sprite.svg#arrow-down"></use>
+                      </svg>
+                    </button>
+                    <div class="slide-item__hidden">
+                      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consequatur fuga magni alias aperiam, molestias mollitia fugiat veniam, optio asperiores rerum doloribus laborum quis reprehenderit iste. Sapiente molestiae unde amet excepturi.</p>
+                    </div>
+                  </li>
+                  <li class="slide-item"> 
+                    <button class="slide-item__button"><span class="title-h3">Каков допустимый срок размещения контейнера?</span>
+                      <svg> 
+                        <use href="img/sprites/sprite.svg#arrow-down"></use>
+                      </svg>
+                    </button>
+                    <div class="slide-item__hidden">
+                      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consequatur fuga magni alias aperiam, molestias mollitia fugiat veniam, optio asperiores rerum doloribus laborum quis reprehenderit iste. Sapiente molestiae unde amet excepturi.</p>
+                    </div>
+                  </li>
+                  <li class="slide-item"> 
+                    <button class="slide-item__button"><span class="title-h3">За сколько времени до вывоза мусора нужно подать заявку?</span>
+                      <svg> 
+                        <use href="img/sprites/sprite.svg#arrow-down"></use>
+                      </svg>
+                    </button>
+                    <div class="slide-item__hidden">
+                      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consequatur fuga magni alias aperiam, molestias mollitia fugiat veniam, optio asperiores rerum doloribus laborum quis reprehenderit iste. Sapiente molestiae unde amet excepturi.</p>
+                    </div>
+                  </li>
+                  <li class="slide-item"> 
+                    <button class="slide-item__button"><span class="title-h3">Занимается ли ваша организация вывозом брошенных автомобилей?</span>
+                      <svg> 
+                        <use href="img/sprites/sprite.svg#arrow-down"></use>
+                      </svg>
+                    </button>
+                    <div class="slide-item__hidden">
+                      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consequatur fuga magni alias aperiam, molestias mollitia fugiat veniam, optio asperiores rerum doloribus laborum quis reprehenderit iste. Sapiente molestiae unde amet excepturi.</p>
+                    </div>
+                  </li>
+            </ul>
+          </div>
+        </section>
+        <section class="question section-pad">
+          <div class="container">
+            <div class="question__wrapper">
+              <div class="question__textblock">
+                <h2 class="title-h2 mb32">Не нашли ответ на вопрос?</h2><span class="subtitle mb32">Напишите нам и мы обязательно вам поможем</span>
+              </div>
+              <form class="question-form">
+                    <input class="input blue" type="text" placeholder="Ваше имя">
+                    <input class="input blue" type="text" placeholder="Ваш номер телефона">
+                    <textarea class="textarea blue" placeholder="Ваш вопрос"></textarea>
+                    <button class="white form__sumbit button" type="button">Отправить заявку</button><small class="form__personal">Нажимая на кнопку «Отправить заявку», вы даете согласие на&nbsp;обработку своих 
+                      <button type="button">персональных данных</button></small>
+              </form>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+    <footer class="footer">
+      <div class="footer__top">
+        <div class="container">
+          <div class="footer__row">
+            <div class="footer__logo"> <a class="logo" href="index.html">
+                    <div class="logo__img"> <img src="img/logo/logo.svg" alt="Логотип сайта"></div></a><span>Круглосуточный вывоз мусора <br>по Москве и области</span>
+            </div>
+            <div class="footer__navblock"> 
+              <nav class="footer__nav"><b>Клиентам</b>
+                <ul class="footer__list">
+                      <li> <a href="#">Цены</a></li>
+                      <li> <a href="#">Автопарк</a></li>
+                      <li> <a href="#">Услуги</a></li>
+                      <li> <a href="#">Наши клиенты</a></li>
+                </ul>
+              </nav>
+              <nav class="footer__nav"><b>О нас</b>
+                <ul class="footer__list">
+                      <li> <a href="#">О компании</a></li>
+                      <li> <a href="#">Лицензия</a></li>
+                      <li> <a href="#">Контакты</a></li>
+                      <li> <a href="#">География</a></li>
+                </ul>
+              </nav>
+            </div>
+            <div class="footer__infoblock infoblock"><a class="infoblock__email" href="mailto:stroi-musor@yandex.ru" title="Написать на почту stroi-musor@yandex.ru">
+                <svg>
+                  <use href="img/sprites/sprite.svg#envelope"></use>
+                </svg><span>stroi-musor@yandex.ru</span></a>
+              <div class="infoblock__phones"> <a href="tel:+74957748350" title="Позвонить на номер: +7 495 774 83 50">+7 495 774 83 50</a><a href="tel:+79857748350" title="Позвонить на номер: +7 985 774 83 50">+7 985 774 83 50</a></div>
+              <div class="infoblock__call"> 
+                    <button class="button white">Написать нам<img src="img/icons/call.svg" alt="">
+                    </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="footer__bottom"> 
+        <div class="container">
+          <button class="footer__bottom-personal" data-modal="privacy"><small>Политика конфиденциальности</small></button><a class="footer__bottom-web2" href="https://web2.ru" target="_blank" title="Переход на сайт web2.ru"> 
+            <svg width="16" height="16">
+              <use href="./img/sprites/sprite.svg#web2ru"></use>
+            </svg><small>Разработка сайта web2.ru</small></a>
+        </div>
+      </div>
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+    <script src="./js/vendor.js"></script>
+    <script src="./js/main.js"></script>
+  </body>
+</html>
