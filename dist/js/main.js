@@ -541,6 +541,70 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "../views/blocks/modals/modal-privacy/modal-privacy.js":
+/*!*************************************************************!*\
+  !*** ../views/blocks/modals/modal-privacy/modal-privacy.js ***!
+  \*************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _layouts_modal_modal__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @layouts/modal/modal */ "../views/layouts/modal/modal.js");
+
+/* harmony default export */ __webpack_exports__["default"] = (function () {
+  $('.form__personal button').on('click', function () {
+    Object(_layouts_modal_modal__WEBPACK_IMPORTED_MODULE_0__["modalOpen"])(this);
+  });
+});
+
+/***/ }),
+
+/***/ "../views/blocks/modals/modal-thx/modal-thx.js":
+/*!*****************************************************!*\
+  !*** ../views/blocks/modals/modal-thx/modal-thx.js ***!
+  \*****************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var core_js_modules_es_array_find_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! core-js/modules/es.array.find.js */ "../../node_modules/core-js/modules/es.array.find.js");
+/* harmony import */ var core_js_modules_es_array_find_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_array_find_js__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var core_js_modules_es_object_values_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! core-js/modules/es.object.values.js */ "../../node_modules/core-js/modules/es.object.values.js");
+/* harmony import */ var core_js_modules_es_object_values_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_object_values_js__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _layouts_modal_modal__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @layouts/modal/modal */ "../views/layouts/modal/modal.js");
+
+
+
+/* harmony default export */ __webpack_exports__["default"] = (function () {
+  $('.form__sumbit').on('click', function (e) {
+    var inputs = $(this).parent('form').find('.input'),
+        inputArray = [];
+    inputs.each(function (i) {
+      if (!this.validity.valid) {
+        $(this).addClass('invalid');
+        inputArray[i] = false;
+      } else {
+        inputArray[i] = true;
+      }
+    });
+    var formDone = Object.values(inputArray).every(function (val) {
+      return val !== false;
+    });
+
+    if (formDone) {
+      e.preventDefault();
+      Object(_layouts_modal_modal__WEBPACK_IMPORTED_MODULE_2__["modalOpen"])(this);
+    }
+  });
+  $('.modal__button-close').on('click', function () {
+    Object(_layouts_modal_modal__WEBPACK_IMPORTED_MODULE_2__["modalCloseFunc"])();
+  });
+});
+
+/***/ }),
+
 /***/ "../views/components/slide/slide.js":
 /*!******************************************!*\
   !*** ../views/components/slide/slide.js ***!
@@ -574,7 +638,7 @@ __webpack_require__.r(__webpack_exports__);
     var expanded = $(this).attr('aria-expanded') === 'true';
     $(this).attr('aria-expanded', !expanded);
     $(this).toggleClass('open');
-    $('.header-mid__menu').toggleClass('open');
+    $('.header-mid__menu, .whatsapp').toggleClass('open');
     $('html').toggleClass('header__open');
   });
   $('.header-mid__menu').on('click', function () {
@@ -628,7 +692,8 @@ var modalCloseFunc = function modalCloseFunc() {
     $('.modal-privacy').removeClass('modal-showed');
     html[0].modals = false;
   } else {
-    $('body, .modal').css('padding-right', 0);
+    // не забыть убрать .header
+    $('body, .modal, .header').css('padding-right', 0);
     $('.modal, .modal-overlay, html').removeClass('modal-showed');
     $('.modal-form__hidden, .modal-form__visible').removeClass('form-done');
   }
@@ -651,7 +716,8 @@ var modalOpen = function modalOpen(el) {
   $('html').addClass('modal-showed');
 
   if (scrollWidth > 0) {
-    $('body, .modal').css('padding-right', scrollWidth);
+    // не забыть убрать .header
+    $('body, .modal, .header').css('padding-right', scrollWidth);
   }
 };
 
@@ -679,7 +745,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _blocks_main_benefits_benefits__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @blocks/main/benefits/benefits */ "../views/blocks/main/benefits/benefits.js");
 /* harmony import */ var _blocks_main_squad_squad__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @blocks/main/squad/_squad */ "../views/blocks/main/squad/_squad.js");
 /* harmony import */ var _blocks_modals_modal_district_modal_district__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @blocks/modals/modal-district/modal-district */ "../views/blocks/modals/modal-district/modal-district.js");
-/* harmony import */ var _layouts_modal_modal__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! @layouts/modal/modal */ "../views/layouts/modal/modal.js");
+/* harmony import */ var _blocks_modals_modal_thx_modal_thx__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! @blocks/modals/modal-thx/modal-thx */ "../views/blocks/modals/modal-thx/modal-thx.js");
+/* harmony import */ var _blocks_modals_modal_privacy_modal_privacy__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! @blocks/modals/modal-privacy/modal-privacy */ "../views/blocks/modals/modal-privacy/modal-privacy.js");
+/* harmony import */ var _layouts_modal_modal__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! @layouts/modal/modal */ "../views/layouts/modal/modal.js");
 // import $ from 'jquery';
 
 /* полифил для :focus-visible */
@@ -694,7 +762,8 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
- // import modalForm from '@blocks/modals/modal-form/modal-form';
+
+
 
  //Показ сайта
 // let scrolling = 'main >section, main >section div';
@@ -737,7 +806,9 @@ $(function () {
   Object(_components_slide_slide__WEBPACK_IMPORTED_MODULE_6__["default"])();
   Object(_blocks_media_media__WEBPACK_IMPORTED_MODULE_5__["default"])();
   Object(_blocks_modals_modal_district_modal_district__WEBPACK_IMPORTED_MODULE_11__["default"])();
-  Object(_layouts_modal_modal__WEBPACK_IMPORTED_MODULE_12__["modalClose"])();
+  Object(_layouts_modal_modal__WEBPACK_IMPORTED_MODULE_14__["modalClose"])();
+  Object(_blocks_modals_modal_thx_modal_thx__WEBPACK_IMPORTED_MODULE_12__["default"])();
+  Object(_blocks_modals_modal_privacy_modal_privacy__WEBPACK_IMPORTED_MODULE_13__["default"])();
   Object(_blocks_main_squad_squad__WEBPACK_IMPORTED_MODULE_10__["default"])();
 });
 Object(_blocks_main_articles_articles__WEBPACK_IMPORTED_MODULE_7__["default"])();
